@@ -42,3 +42,13 @@ The backend keeps business rules in services, including stock reservation, avail
 ## Development Notes
 
 Local apps are migration-light for fast setup. Use `python manage.py migrate --run-syncdb` in development. For production, generate normal migrations and set `DB_ENGINE=postgres` with the PostgreSQL variables from `backend/.env.example`.
+
+## Railway Backend Deployment
+
+Backend deployment is prepared for Railway with:
+
+- `backend/Procfile` (Gunicorn startup + migrations)
+- `DATABASE_URL` support for Railway PostgreSQL
+- production security settings enabled when `DJANGO_DEBUG=False`
+
+See `backend/README.md` for full deployment steps and required environment variables.

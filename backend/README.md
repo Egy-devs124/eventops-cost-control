@@ -108,3 +108,22 @@ DB_PASSWORD=your-password
 DB_HOST=localhost
 DB_PORT=5432
 ```
+
+## Deploy Backend To Railway
+
+1. Create a Railway project and link this GitHub repository.
+2. In Railway service settings, set **Root Directory** to `backend`.
+3. Add a PostgreSQL service in Railway and attach it to the backend service.
+4. Set environment variables for backend service:
+
+```env
+DJANGO_SECRET_KEY=<strong-random-secret>
+DJANGO_DEBUG=False
+DJANGO_ALLOWED_HOSTS=<your-railway-domain>
+CORS_ALLOWED_ORIGINS=<frontend-url>
+CSRF_TRUSTED_ORIGINS=https://<your-railway-domain>,<frontend-url>
+DATABASE_URL=<provided-by-railway-postgres>
+DB_SSL_REQUIRE=True
+```
+
+Railway will use `Procfile` to run migrations and start Gunicorn automatically.
