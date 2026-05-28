@@ -143,7 +143,7 @@ AUTH_USER_MODEL = "accounts.User"
 # The project is intentionally migration-light for fast bootstrapping. Use
 # `python manage.py migrate --run-syncdb` locally; production can add normal
 # generated migrations when schema hardening begins.
-MIGRATION_MODULES = {app.split(".")[-1]: None for app in LOCAL_APPS}
+# MIGRATION_MODULES = {app.split(".")[-1]: None for app in LOCAL_APPS}
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
