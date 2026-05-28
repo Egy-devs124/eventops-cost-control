@@ -1,0 +1,47 @@
+import {
+  Bell,
+  Boxes,
+  BriefcaseBusiness,
+  CalendarCheck,
+  CircleDollarSign,
+  ClipboardList,
+  FileBarChart,
+  FileText,
+  Gauge,
+  HandCoins,
+  Receipt,
+  Settings,
+  Truck,
+  Users,
+  Warehouse,
+} from "lucide-react";
+
+export const roles = {
+  owner: "owner_manager",
+  admin: "admin",
+  sales: "sales",
+  operations: "operations",
+  accountant: "accountant",
+  technician: "technician",
+  driver: "driver",
+  cashier: "cashier",
+  viewer: "viewer",
+};
+
+export const navItems = [
+  { to: "/", labelKey: "dashboard", icon: Gauge },
+  { to: "/clients", labelKey: "clients", icon: Users, roles: [roles.owner, roles.admin, roles.sales, roles.accountant] },
+  { to: "/orders", labelKey: "orders", icon: ClipboardList },
+  { to: "/quotations", labelKey: "quotations", icon: FileText, roles: [roles.owner, roles.admin, roles.sales] },
+  { to: "/inventory", labelKey: "inventory", icon: Warehouse, roles: [roles.owner, roles.admin, roles.operations, roles.accountant, roles.sales] },
+  { to: "/vendors", labelKey: "vendors", icon: Boxes, roles: [roles.owner, roles.admin, roles.operations, roles.accountant] },
+  { to: "/drivers", labelKey: "drivers", icon: Truck, roles: [roles.owner, roles.admin, roles.operations, roles.accountant, roles.driver] },
+  { to: "/staff", labelKey: "staff", icon: BriefcaseBusiness, roles: [roles.owner, roles.admin, roles.operations, roles.accountant, roles.technician] },
+  { to: "/payroll", labelKey: "payroll", icon: CalendarCheck, roles: [roles.owner, roles.accountant] },
+  { to: "/finance", labelKey: "finance", icon: CircleDollarSign, roles: [roles.owner, roles.accountant, roles.cashier, roles.sales] },
+  { to: "/reports", labelKey: "reports", icon: FileBarChart, roles: [roles.owner, roles.admin, roles.accountant, roles.operations, roles.sales] },
+  { to: "/notifications", labelKey: "notifications", icon: Bell },
+  { to: "/settings", labelKey: "settings", icon: Settings, roles: [roles.owner, roles.admin, roles.cashier] },
+  { to: "/finance?tab=payments", labelKey: "payments", icon: HandCoins, roles: [roles.owner, roles.accountant, roles.sales] },
+  { to: "/finance?tab=invoices", labelKey: "invoices", icon: Receipt, roles: [roles.owner, roles.accountant, roles.sales] },
+];

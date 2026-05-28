@@ -1,0 +1,9 @@
+backend/.env
+backend/db.sqlite3-journal
+backend/media/
+frontend/.env
+frontend/dist/
+frontend/node_modules/
+__pycache__/
+*.pyc
+.DS_Store
